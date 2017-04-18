@@ -1,180 +1,89 @@
-<div class="weui-cells__title">单选列表项</div>
+<?php echo validation_errors(); ?>
+
+<?php echo form_open('news/create'); ?>
+<div class="weui-cells__title">基础信息</div>
+<div class="weui-cells weui-cells-form">
+	<div class="weui-cell">
+		<div class="weui-cell__hd"><label class="weui-label">用户名</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" name="username" type="text" placeholder="请输入用户名"/>
+        </div>
+	</div>
+	<div class="weui-cell">
+		<div class="weui-cell__hd"><label class="weui-label">邮箱</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" name="email" type="text" placeholder="请输入邮箱"/>
+        </div>
+	</div>
+	<div class="weui-cell">
+		<div class="weui-cell__hd"><label class="weui-label">密码</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" name="username" type="password" placeholder="请输入密码"/>
+        </div>
+	</div>
+	<div class="weui-cell">
+		<div class="weui-cell__hd"><label class="weui-label">确认密码</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" name="username" type="password" placeholder="请输入密码"/>
+        </div>
+	</div>
+	
+</div>
+<div class="weui-cells__title">选择性别</div>
 <div class="weui-cells weui-cells_radio">
     <label class="weui-cell weui-check__label" for="x11">
         <div class="weui-cell__bd">
-            <p>cell standard</p>
+            <p>女</p>
         </div>
         <div class="weui-cell__ft">
-            <input type="radio" class="weui-check" name="radio1" id="x11">
+            <input class="weui-check" name="sex" id="x11" type="radio" value='0'>
             <span class="weui-icon-checked"></span>
         </div>
     </label>
     <label class="weui-cell weui-check__label" for="x12">
 
         <div class="weui-cell__bd">
-            <p>cell standard</p>
+            <p>男</p>
         </div>
         <div class="weui-cell__ft">
-            <input type="radio" name="radio1" class="weui-check" id="x12" checked="checked">
+            <input name="sex" class="weui-check" id="x12" checked="checked" value="1" type="radio">
             <span class="weui-icon-checked"></span>
         </div>
     </label>
-    <a href="javascript:void(0);" class="weui-cell weui-cell_link">
-        <div class="weui-cell__bd">添加更多</div>
-    </a>
+    
 </div>
-<div class="weui-cells__title">复选列表项</div>
-<div class="weui-cells weui-cells_checkbox">
-    <label class="weui-cell weui-check__label" for="s11">
-        <div class="weui-cell__hd">
-            <input type="checkbox" class="weui-check" name="checkbox1" id="s11" checked="checked">
-            <i class="weui-icon-checked"></i>
-        </div>
-        <div class="weui-cell__bd">
-            <p>standard is dealt for u.</p>
-        </div>
-    </label>
-    <label class="weui-cell weui-check__label" for="s12">
-        <div class="weui-cell__hd">
-            <input type="checkbox" name="checkbox1" class="weui-check" id="s12">
-            <i class="weui-icon-checked"></i>
-        </div>
-        <div class="weui-cell__bd">
-            <p>standard is dealicient for u.</p>
-        </div>
-    </label>
-    <a href="javascript:void(0);" class="weui-cell weui-cell_link">
-        <div class="weui-cell__bd">添加更多</div>
-    </a>
-</div>
-
-<div class="weui-cells__title">表单</div>
+<input type="hidden" name="avatar" id="avatar">  
+<div class="weui-cells__title">头像上传</div>
 <div class="weui-cells weui-cells_form">
-    <div class="weui-cell">
-        <div class="weui-cell__hd"><label class="weui-label">qq</label></div>
-        <div class="weui-cell__bd">
-            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入qq号"/>
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <div class="weui-uploader">
+                        
+                        <div class="weui-uploader__bd">
+                            <ul class="weui-uploader__files" id="uploaderFiles">
+                                
+                            </ul>
+                            <div class="weui-uploader__input-box">
+                                <input id="uploaderInput" class="weui-uploader__input js_file" type="file" accept="image/*" multiple="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="weui-cell weui-cell_vcode">
-        <div class="weui-cell__hd">
-            <label class="weui-label">手机号</label>
-        </div>
-        <div class="weui-cell__bd">
-            <input class="weui-input" type="tel" placeholder="请输入手机号">
-        </div>
-        <div class="weui-cell__ft">
-            <a href="javascript:;" class="weui-vcode-btn">获取验证码</a>
-        </div>
-    </div>
-    <div class="weui-cell">
-        <div class="weui-cell__hd"><label for="" class="weui-label">日期</label></div>
-        <div class="weui-cell__bd">
-            <input class="weui-input" type="date" value=""/>
-        </div>
-    </div>
-    <div class="weui-cell">
-        <div class="weui-cell__hd"><label for="" class="weui-label">时间</label></div>
-        <div class="weui-cell__bd">
-            <input class="weui-input" type="datetime-local" value="" placeholder=""/>
-        </div>
-    </div>
-    <div class="weui-cell weui-cell_vcode">
-        <div class="weui-cell__hd"><label class="weui-label">验证码</label></div>
-        <div class="weui-cell__bd">
-            <input class="weui-input" type="number" placeholder="请输入验证码"/>
-        </div>
-        <div class="weui-cell__ft">
-            <img class="weui-vcode-img" src="./images/vcode.jpg" />
-        </div>
-    </div>
-</div>
-<div class="weui-cells__tips">底部说明文字底部说明文字</div>
-
-<div class="weui-cells__title">表单报错</div>
-<div class="weui-cells weui-cells_form">
-    <div class="weui-cell weui-cell_warn">
-        <div class="weui-cell__hd"><label for="" class="weui-label">卡号</label></div>
-        <div class="weui-cell__bd">
-            <input class="weui-input" type="number" pattern="[0-9]*" value="weui input error" placeholder="请输入卡号"/>
-        </div>
-        <div class="weui-cell__ft">
-            <i class="weui-icon-warn"></i>
-        </div>
-    </div>
-</div>
 
 
-<div class="weui-cells__title">开关</div>
-<div class="weui-cells weui-cells_form">
-    <div class="weui-cell weui-cell_switch">
-        <div class="weui-cell__bd">标题文字</div>
-        <div class="weui-cell__ft">
-            <input class="weui-switch" type="checkbox"/>
+    <div class="js_dialog" id="iosDialog1" style="display: none;">
+            <div class="weui-mask"></div>
+            <div class="weui-dialog">
+                <div class="weui-dialog__hd"><strong class="weui-dialog__title">弹窗标题</strong></div>
+                <div class="weui-dialog__bd">弹窗内容，告知当前状态、信息和解决方法，描述文字尽量控制在三行内</div>
+                <div class="weui-dialog__ft">
+                    <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default">辅助操作</a>
+                    <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">主操作</a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
-<div class="weui-cells__title">文本框</div>
-<div class="weui-cells">
-    <div class="weui-cell">
-        <div class="weui-cell__bd">
-            <input class="weui-input" type="text" placeholder="请输入文本"/>
-        </div>
-    </div>
-</div>
-
-<div class="weui-cells__title">文本域</div>
-<div class="weui-cells weui-cells_form">
-    <div class="weui-cell">
-        <div class="weui-cell__bd">
-            <textarea class="weui-textarea" placeholder="请输入文本" rows="3"></textarea>
-            <div class="weui-textarea-counter"><span>0</span>/200</div>
-        </div>
-    </div>
-</div>
-
-<div class="weui-cells__title">选择</div>
-<div class="weui-cells">
-
-    <div class="weui-cell weui-cell_select weui-cell_select-before">
-        <div class="weui-cell__hd">
-            <select class="weui-select" name="select2">
-                <option value="1">+86</option>
-                <option value="2">+80</option>
-                <option value="3">+84</option>
-                <option value="4">+87</option>
-            </select>
-        </div>
-        <div class="weui-cell__bd">
-            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入号码"/>
-        </div>
-    </div>
-</div>
-<div class="weui-cells__title">选择</div>
-<div class="weui-cells">
-    <div class="weui-cell weui-cell_select">
-        <div class="weui-cell__bd">
-            <select class="weui-select" name="select1">
-                <option selected="" value="1">微信号</option>
-                <option value="2">QQ号</option>
-                <option value="3">Email</option>
-            </select>
-        </div>
-    </div>
-    <div class="weui-cell weui-cell_select weui-cell_select-after">
-        <div class="weui-cell__hd">
-            <label for="" class="weui-label">国家/地区</label>
-        </div>
-        <div class="weui-cell__bd">
-            <select class="weui-select" name="select2">
-                <option value="1">中国</option>
-                <option value="2">美国</option>
-                <option value="3">英国</option>
-            </select>
-        </div>
-    </div>
-</div>
 
 <label for="weuiAgree" class="weui-agree">
     <input id="weuiAgree" type="checkbox" class="weui-agree__checkbox">
@@ -186,3 +95,101 @@
 <div class="weui-btn-area">
     <a class="weui-btn weui-btn_primary" href="javascript:" id="showTooltips">确定</a>
 </div>
+</form>
+
+<script>
+	$.weui = {};  
+  $.weui.alert = function(options){  
+    var $iosDialog1 = $('#iosDialog1');
+    var $alert = $('.js_dialog');
+    
+    $alert.on('touchend click','.weui-dialog__btn_primary',function(){
+    	$alert.fadeOut(200);
+    });
+    $iosDialog1.fadeIn(300);
+  };  
+
+
+	$(function () {  
+    // 允许上传的图片类型  
+    var allowTypes = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'];
+    // 1024KB，也就是 1MB  
+    var maxSize = 1024 * 1024;  
+    // 图片最大宽度  
+    var maxWidth = 300;  
+    // 最大上传图片数量  
+    var maxCount = 1;  
+    $('.js_file').on('change', function (event) {  
+    	$('.weui-uploader__files').html('');
+      var files = event.target.files; 
+        // 如果没有选中文件，直接返回  
+        if (files.length === 0) {  
+          return;  
+        }  
+        
+        for (var i = 0, len = files.length; i < 1; i++) {  
+
+          var file = files[i];  
+          var reader = new FileReader();  
+          
+            // 如果类型不在允许的类型范围内  
+            if (allowTypes.indexOf(file.type) === -1) {  
+              $.weui.alert({text: '该类型不允许上传'});  
+              continue;  
+            }  
+            
+            if (file.size > maxSize) {  
+              $.weui.alert({text: '图片太大，不允许上传'});  
+              continue;  
+            }  
+            console.log($('.weui-uploader__file').length);
+            if ($('.weui-uploader__file').length >= maxCount) {  
+              $.weui.alert({text: '最多只能上传' + maxCount + '张图片'});  
+              return;  
+            }  
+            
+            reader.onload = function (e) {  
+              var img = new Image();  
+              img.onload = function () {  
+                    // 不要超出最大宽度  
+                    var w = Math.min(maxWidth, img.width);  
+                    // 高度按比例计算  
+                    var h = img.height * (w / img.width);  
+                    var canvas = document.createElement('canvas');  
+                    var ctx = canvas.getContext('2d');  
+                    // 设置 canvas 的宽度和高度  
+                    canvas.width = w;  
+                    canvas.height = h;  
+                    ctx.drawImage(img, 0, 0, w, h);  
+                    var base64 = canvas.toDataURL('image/png');  
+                    $('#avatar').val(base64);
+                    // 插入到预览区  
+                    var $preview = $('<li class="weui-uploader__file weui-uploader__file_status" style="background-image:url(' + base64 + ')"><div class="weui-uploader__file-content">0%</div></li>');  
+                    $('.weui-uploader__files').append($preview);  
+                    var num = $('.weui-uploader__file').length;  
+                    $('.js_counter').text(num + '/' + maxCount);  
+                    
+                    // 然后假装在上传，可以post base64格式，也可以构造blob对象上传，也可以用微信JSSDK上传  
+                    
+                    var progress = 0;  
+                    function uploading() {  
+                      $preview.find('.weui-uploader__file-content').text(++progress + '%');  
+                      if (progress < 100) {  
+                        setTimeout(uploading, 30);  
+                      }  
+                      else {  
+                            // 如果是失败，塞一个失败图标  
+                            //$preview.find('.weui_uploader_status_content').html('<i class="weui_icon_warn"></i>');  
+                            $preview.removeClass('weui-uploader__file_status').find('.weui-uploader__file-content').remove();  
+                          }  
+                        }  
+                        setTimeout(uploading, 30);  
+                      };  
+                      
+                      img.src = e.target.result;  
+                    };  
+                    reader.readAsDataURL(file);  
+                  }  
+                });  
+  });  
+</script>
