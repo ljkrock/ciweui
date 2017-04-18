@@ -22,6 +22,9 @@ class User extends CI_Controller {
 		    $this->load->view('base/header', $a=1);
 		    $this->load->view('user/create');
 		    $this->load->view('base/footer');
+		}else{
+			$this->user_model->set_user();
+			die;
 		}
 
 	}

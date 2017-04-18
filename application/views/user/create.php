@@ -1,6 +1,6 @@
 <?php echo validation_errors(); ?>
 
-<?php echo form_open('news/create'); ?>
+<?php echo form_open('user/create',array('class' => 'regform', 'id' => 'regform')); ?>
 <div class="weui-cells__title">基础信息</div>
 <div class="weui-cells weui-cells-form">
 	<div class="weui-cell">
@@ -18,13 +18,13 @@
 	<div class="weui-cell">
 		<div class="weui-cell__hd"><label class="weui-label">密码</label></div>
         <div class="weui-cell__bd">
-            <input class="weui-input" name="username" type="password" placeholder="请输入密码"/>
+            <input class="weui-input" name="password" type="password" placeholder="请输入密码"/>
         </div>
 	</div>
 	<div class="weui-cell">
 		<div class="weui-cell__hd"><label class="weui-label">确认密码</label></div>
         <div class="weui-cell__bd">
-            <input class="weui-input" name="username" type="password" placeholder="请输入密码"/>
+            <input class="weui-input" name="prepassword" type="password" placeholder="请输入密码"/>
         </div>
 	</div>
 	
@@ -109,7 +109,9 @@
     $iosDialog1.fadeIn(300);
   };  
 
-
+  $('#showTooltips').on('click',function(){
+  	$('#regform').submit();
+  })
 	$(function () {  
     // 允许上传的图片类型  
     var allowTypes = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'];
@@ -118,7 +120,7 @@
     // 图片最大宽度  
     var maxWidth = 300;  
     // 最大上传图片数量  
-    var maxCount = 1;  
+    var maxCount = 1;
     $('.js_file').on('change', function (event) {  
     	$('.weui-uploader__files').html('');
       var files = event.target.files; 
