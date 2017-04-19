@@ -1,18 +1,18 @@
 <?php echo validation_errors(); ?>
 
-<?php echo form_open_multipart('user/create',array('class' => 'regform', 'id' => 'regform')); ?>
+<?php echo form_open_multipart('user/index',array('class' => 'regform', 'id' => 'regform')); ?>
 <div class="weui-cells__title">基础信息</div>
 <div class="weui-cells weui-cells-form">
 	<div class="weui-cell">
 		<div class="weui-cell__hd"><label class="weui-label">用户名</label></div>
         <div class="weui-cell__bd">
-            <input class="weui-input" name="username" type="text" placeholder="请输入用户名"/>
+            <input class="weui-input" name="username" type="text" placeholder="请输入用户名" value="<?php echo $username ?>" />
         </div>
 	</div>
 	<div class="weui-cell">
 		<div class="weui-cell__hd"><label class="weui-label">邮箱</label></div>
         <div class="weui-cell__bd">
-            <input class="weui-input" name="email" type="text" placeholder="请输入邮箱"/>
+            <input class="weui-input" name="email" type="text" placeholder="请输入邮箱" value="<?php echo $email ?>" />
         </div>
 	</div>
 	<div class="weui-cell">
@@ -36,7 +36,7 @@
             <p>女</p>
         </div>
         <div class="weui-cell__ft">
-            <input class="weui-check" name="sex" id="x11" type="radio" value='0'>
+            <input class="weui-check" name="sex" id="x11" type="radio" <?php if($sex==0) echo "checked" ?> value='0'>
             <span class="weui-icon-checked"></span>
         </div>
     </label>
@@ -46,7 +46,7 @@
             <p>男</p>
         </div>
         <div class="weui-cell__ft">
-            <input name="sex" class="weui-check" id="x12" checked="checked" value="1" type="radio">
+            <input name="sex" class="weui-check" id="x12" <?php if($sex==1) echo "checked" ?> value="1" type="radio">
             <span class="weui-icon-checked"></span>
         </div>
     </label>
@@ -61,7 +61,7 @@
                         
                         <div class="weui-uploader__bd">
                             <ul class="weui-uploader__files" id="uploaderFiles">
-                                
+                                <li class="weui-uploader__file weui-uploader__file_status" style="background-image:url(<?php echo base_url().$avatar ?>)"></li>
                             </ul>
                             <div class="weui-uploader__input-box">
                                 <input name="avatar" id="uploaderInput" class="weui-uploader__input js_file" type="file" accept="image/*" multiple="">
