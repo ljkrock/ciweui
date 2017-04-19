@@ -176,6 +176,28 @@
     </div>
 </div>
 
+<div class="weui-cells__title">用户注册</div>
+<div class="weui-cells">
+    <div class="weui-grids">
+    <a href="javascript:;" class="weui-grid">
+        <div class="weui-grid__icon">
+            <img src="<?=base_url()?>static/images/icon_nav_button.png" alt="">
+        </div>
+        <p class="weui-grid__label">
+            Button
+        </p>
+    </a>
+    <a href="javascript:;" class="weui-grid">
+        <div class="weui-grid__icon">
+            <img src="<?=base_url()?>static/images/icon_nav_cell.png" alt="">
+        </div>
+        <p class="weui-grid__label">
+            Cell
+        </p>
+    </a>
+</div>
+</div>
+
 <label for="weuiAgree" class="weui-agree">
     <input id="weuiAgree" type="checkbox" class="weui-agree__checkbox">
     <span class="weui-agree__text">
