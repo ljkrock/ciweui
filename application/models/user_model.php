@@ -7,7 +7,7 @@ class User_model extends CI_Model {
     }
 
     //获取用户信息
-    public function get_users($slug=false){
+    public function get_users($slug=false) {
     	return 1;
     }
 
@@ -24,8 +24,8 @@ class User_model extends CI_Model {
             'sex' => $this->input->post('sex'),
 
         );
-        var_dump($password);
-        if(!empty($password)){
+        //var_dump($password);
+        if(!empty($password)) {
             $data['password'] = password_hash($password, PASSWORD_DEFAULT);
         }
         $data['uptime'] = time();
@@ -36,12 +36,22 @@ class User_model extends CI_Model {
             $data[$key]=$value;
         }
 
-        if(!@$data['id']){
+        if (!@$data['id']) {
             $data['regtime'] = time();
         }
-        var_dump($data);die;
-        return $this->db->replace('user', $data);
-        var_dump($a);die;
+
+
+        //var_dump($data);
+        if (@$data['id']) {
+            //echo 111;
+            $this->db->where('id', $data['id']);
+            return $this->db->update('user', $data);
+
+        } else {
+
+            return $this->db->insert('user', $data);   
+        }
+        
     	
     }
 

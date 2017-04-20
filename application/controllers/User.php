@@ -61,11 +61,11 @@ class User extends CI_Controller {
 			$res =$this->user_model->set_user($params);
 			if($res && !$error){
 				$this->load->view('base/header');
-				$this->load->view('base/success');
+				$this->load->view('base/success',array('tips'=>'注册'));
 				$this->load->view('base/footer');
 			}else{
 				$this->load->view('base/header');
-				$this->load->view('base/fail');
+				$this->load->view('base/fail',array('tips'=>'注册'));
 				$this->load->view('base/footer');
 			}
 		}
@@ -83,9 +83,7 @@ class User extends CI_Controller {
     	
 		//验证表单
     	$this->form_validation->set_rules('username', '用户名', 'required');
-    	$this->form_validation->set_rules('email', '邮箱',array('required',array($this->user_model, 'valid_email')
-    )
-    	);
+    	$this->form_validation->set_rules('email', '邮箱',array('required',array($this->user_model, 'valid_email')));
 
 
     	
@@ -120,17 +118,17 @@ class User extends CI_Controller {
 	        	$params['avatar'] = $config['upload_path'].$data['upload_data']['file_name'];
 	        }	        
 	        $params['id'] = $userinfo['id'];
-	        var_dump($params);die;
+	        //var_dump($params);die;
 	        //var_dump($_POST);die;
 	        //var_dump($params);
 			$res =$this->user_model->set_user($params);
 			if($res){
 				$this->load->view('base/header');
-				$this->load->view('base/success');
+				$this->load->view('base/success',array('tips'=>'修改'));
 				$this->load->view('base/footer');
 			}else{
 				$this->load->view('base/header');
-				$this->load->view('base/fail');
+				$this->load->view('base/fail',array('tips'=>'修改'));
 				$this->load->view('base/footer');
 			}
 		}
